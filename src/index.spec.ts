@@ -1,18 +1,15 @@
 import * as jsc from "jsverify";
-
-function linear(x: number): number {
-  return 0.5 * x + 1;
-}
+import linear from ".";
 
 it("the slope between two points should be constant", function () {
-  const constantSlope = jsc.forall(jsc.integer, jsc.integer, function (x1: number, x2: number): boolean {
-    if (x1 === x2) {
-      return true;
+  const constantSlope = jsc.forall(
+    jsc.suchthat(jsc.record({ x1: jsc.integer, x2: jsc.integer }), ({ x1, x2 }) => x1 !== x2),
+    ({ x1, x2 }): boolean => {
+      const y1 = linear(x1);
+      const y2 = linear(x2);
+      const slope = (y2 - y1) / (x2 - x1);
+      return slope === 0.5;
     }
-    const y1 = linear(x1);
-    const y2 = linear(x2);
-    const slope = (y2 - y1) / (x2 - x1);
-    return slope === 0.5;
-  });
+  );
   jsc.assert(constantSlope);
 });
