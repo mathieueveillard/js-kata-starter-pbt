@@ -1,6 +1,6 @@
 # js-kata-starter-pbt
 
-Starter project for kata with Property-Based Testing (Node, TypeScript, Jest, JSVerify)
+Starter project for kata with Property-Based Testing (Node, TypeScript, Jest, fast-check)
 
 ## Installation
 
@@ -15,3 +15,7 @@ npm install
 ```text
 npm test
 ```
+
+## Documentation
+
+[fast-check](https://fast-check.dev/)

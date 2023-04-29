@@ -1,7 +1,7 @@
 {
   "name": "js-kata-starter-pbt",
   "version": "1.0.0",
-  "description": "Starter project for kata with Property-Based Testing (Node, TypeScript, Jest, JSVerify)",
+  "description": "Starter project for kata with Property-Based Testing (Node, TypeScript, Jest, fast-check)",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch --coverage",
@@ -30,9 +30,9 @@
   "homepage": "https://github.com/mathieueveillard/js-kata-starter-pbt#readme",
   "devDependencies": {
     "@types/jest": "^29.5.1",
+    "fast-check": "^3.8.1",
     "jest": "^29.5.0",
-    "jsverify": "^0.8.4",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   }
